@@ -100,5 +100,13 @@ class Plugin_Name_Public {
 
 	}
 	
+	public function show_excerpt_shortcode() {
+		return sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
+			esc_url( get_permalink( get_the_ID() ) ),
+			sprintf( __( 'Continue reading %s', 'wpdocs' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
+		);
+	}
+
+
 
 }
