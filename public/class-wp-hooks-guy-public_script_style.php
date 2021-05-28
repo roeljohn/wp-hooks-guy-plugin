@@ -20,7 +20,7 @@
  * @subpackage Plugin_Name/public
  * @author     Your Name <email@example.com>
  */
-class Plugin_Name_Public {
+class WP_Hooks_Script_and_Style_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -99,14 +99,5 @@ class Plugin_Name_Public {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp-hooks-guy-public.js', array( 'jquery' ), $this->version, false );
 
 	}
-	
-	public function show_excerpt_shortcode() {
-		return sprintf( ''. get_the_excerpt() .' <a href="%1$s" class="more-link">%2$s</a>',
-			esc_url( get_permalink( get_the_ID() ) ),
-			sprintf( __( 'Continue reading %s', 'wpdocs' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
-		);
-	}
-
-
 
 }
